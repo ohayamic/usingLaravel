@@ -58,4 +58,15 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function chat_rooms()
+    {
+        return $this->belongsTo(ChatRoom::class);
+    }
+
+    public function chat_messages()
+    {
+        return $this->hasMany(ChatMessages::class);
+    }
+
 }
