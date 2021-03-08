@@ -14,10 +14,12 @@ class CreateChatRoomsTable extends Migration
     public function up()
     {
         Schema::create('chat_rooms', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->integer('user_id');
+            $table->bigIncrements('id');
+            $table->string('title');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
