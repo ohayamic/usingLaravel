@@ -30,11 +30,6 @@ class ChatMessagesFactory extends Factory
                             ->firstOr(function () {
                                 return factory(\App\Models\User::class)->create();
                         }),
-            'chat_room_id' =>\App\Models\ChatRoom::query()
-                            ->inRandomOrder()
-                            ->firstOr(function () {
-                                 return factory(\App\Models\ChatRoom::class)->create();
-                            }),
 
         ];
     }

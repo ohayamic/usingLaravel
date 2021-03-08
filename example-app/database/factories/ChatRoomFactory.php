@@ -23,7 +23,7 @@ class ChatRoomFactory extends Factory
     {
         return [
             //
-            'name' => $this->faker->sentence($nbWords = 6, $variableNbWords = true),
+            'title' => $this->faker->sentence($nbWords = 6, $variableNbWords = true),
             'user_id' =>\App\Models\User::query()
                     ->inRandomOrder()
                     ->firstOr(function () {
